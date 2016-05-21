@@ -36,8 +36,9 @@ class DynamicArray
   end
 
   def [](i)
-    return nil if @count == 0
+    return nil if @count == 0 || i >= @count
     i += @count if i < 0
+    return nil if i < 0
     @store[i]
   end
 
